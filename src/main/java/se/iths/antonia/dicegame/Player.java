@@ -15,8 +15,12 @@ public class Player {
 
     }
 
+    public void resetScore() {
+        this.score = 0;
+    }
+
     public String getFullName() {
-        return  this.firstName + " " + this.lastName;
+        return this.firstName + " " + this.lastName;
 
     }
 

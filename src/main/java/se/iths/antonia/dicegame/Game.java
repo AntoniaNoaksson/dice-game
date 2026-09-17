@@ -4,9 +4,16 @@ public class Game {
     public void startGame() {
         Player player1 = createPlayer();
         Player player2 = createPlayer();
-        rollDice(player1);
-        rollDice(player2);
-        checkWinner(player1, player2);
+        String playAgain = "ja";
+        while (playAgain.equals("ja")) {
+            rollDice(player1);
+            rollDice(player2);
+            checkWinner(player1, player2);
+            player1.resetScore();
+            player2.resetScore();
+            playAgain = IO.readln("Vill du spela igen?");
+        }
+        IO.println("Spelet avslutas");
     }
 
 
